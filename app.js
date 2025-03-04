@@ -27,6 +27,8 @@ function limpiarInput(){
  function liNombre (){
     listaAmigos.innerHTML = "";
 
+
+
     for (let i = 0; i < nombres.length; i++){
         let li = document.createElement("li");
         li.innerHTML = nombres[i];
@@ -34,4 +36,18 @@ function limpiarInput(){
     }
  }
 
- 
+ function sortearAmigo (){
+    
+    
+    let nombreGenerado = Math.floor(Math.random() * nombres.length);
+
+    if (nombres.length === 0){
+        alert ("No hay amigos agregados");
+    } else {
+        let amigoSorteado = nombres[nombreGenerado]
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = "Tu amigo secreto es: " + amigoSorteado;
+        listaAmigos.innerHTML = "";
+    }
+    
+ }
